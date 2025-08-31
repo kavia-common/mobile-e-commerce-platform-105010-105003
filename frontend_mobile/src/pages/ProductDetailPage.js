@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -116,11 +116,11 @@ const ProductDetailPage = () => {
     const hasHalfStar = rating % 1 !== 0;
     
     for (let i = 0; i < fullStars; i++) {
-      stars.push(<span key={i} className="star full">★</span>);
+      stars.push(<span key={i} className="star full">⭐</span>);
     }
     
     if (hasHalfStar) {
-      stars.push(<span key="half" className="star half">★</span>);
+      stars.push(<span key="half" className="star half">⭐</span>);
     }
     
     const emptyStars = 5 - Math.ceil(rating);
